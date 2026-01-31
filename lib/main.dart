@@ -92,13 +92,13 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               // Decorative header
               Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
                     colors: [Color(0xFFFFB6C1), Color(0xFFFFDAE0)],
@@ -151,7 +151,7 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
               
               // Form section
               Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16),
@@ -236,7 +236,7 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
               // Preview section
               if (_isSubmitted) ...[
                 Container(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [Color(0xFFFFE4E9), Color(0xFFFFF0F5)],
