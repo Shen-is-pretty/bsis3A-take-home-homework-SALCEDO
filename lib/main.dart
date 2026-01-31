@@ -13,26 +13,26 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mini Form',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFFB4D4FF),
+          seedColor: const Color(0xFFFFB6C1),
           brightness: Brightness.light,
         ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
-          fillColor: const Color(0xFFF0F7FF),
+          fillColor: const Color(0xFFFFF0F5),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: Color(0xFFB4D4FF)),
+            borderSide: const BorderSide(color: Color(0xFFFFB6C1)),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: Color(0xFFB4D4FF)),
+            borderSide: const BorderSide(color: Color(0xFFFFB6C1)),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: Color(0xFF86B6F6), width: 2),
+            borderSide: const BorderSide(color: Color(0xFFFF69B4), width: 2),
           ),
         ),
       ),
@@ -77,17 +77,17 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFAFDFF),
+      backgroundColor: const Color(0xFFFFF5F7),
       appBar: AppBar(
         title: const Text(
           'Mini Form',
           style: TextStyle(
             fontWeight: FontWeight.w600,
-            color: Color(0xFF4A5F7F),
+            color: Color(0xFF8B4F6B),
           ),
         ),
         centerTitle: true,
-        backgroundColor: const Color(0xFFEBF4FF),
+        backgroundColor: const Color(0xFFFFE4E9),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -101,41 +101,46 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xFFB4D4FF), Color(0xFFD4E7FF)],
+                    colors: [Color(0xFFFFB6C1), Color(0xFFFFDAE0)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFFB4D4FF).withOpacity(0.3),
+                      color: const Color(0xFFFFB6C1).withOpacity(0.3),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),
                   ],
                 ),
-                child: const Column(
+                child: Column(
                   children: [
-                    Icon(
-                      Icons.edit_document,
-                      size: 40,
-                      color: Color(0xFF4A5F7F),
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        const Icon(
+                          Icons.assignment,
+                          size: 50,
+                          color: Color(0xFF8B4F6B),
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 8),
-                    Text(
+                    const SizedBox(height: 8),
+                    const Text(
                       'Fill out the form below',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF4A5F7F),
+                        color: Color(0xFF8B4F6B),
                       ),
                     ),
-                    SizedBox(height: 4),
-                    Text(
+                    const SizedBox(height: 4),
+                    const Text(
                       'Do I Know You?',
                       style: TextStyle(
                         fontSize: 14,
-                        color: Color(0xFF6B7F99),
+                        color: Color(0xFFA36981),
                       ),
                     ),
                   ],
@@ -152,7 +157,7 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFFB4D4FF).withOpacity(0.2),
+                      color: const Color(0xFFFFB6C1).withOpacity(0.2),
                       blurRadius: 15,
                       offset: const Offset(0, 5),
                     ),
@@ -167,10 +172,10 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                         controller: _nameController,
                         decoration: const InputDecoration(
                           labelText: 'Full Name',
-                          labelStyle: TextStyle(color: Color(0xFF6B7F99)),
+                          labelStyle: TextStyle(color: Color(0xFFA36981)),
                           hintText: 'Enter your full name',
-                          hintStyle: TextStyle(color: Color(0xFFB4C7E7)),
-                          prefixIcon: Icon(Icons.person, color: Color(0xFF86B6F6)),
+                          hintStyle: TextStyle(color: Color(0xFFFFCDD2)),
+                          prefixIcon: Icon(Icons.person, color: Color(0xFFFF69B4)),
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -185,11 +190,11 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                         controller: _messageController,
                         decoration: const InputDecoration(
                           labelText: 'Message',
-                          labelStyle: TextStyle(color: Color(0xFF6B7F99)),
+                          labelStyle: TextStyle(color: Color(0xFFA36981)),
                           hintText: 'Enter your message',
-                          hintStyle: TextStyle(color: Color(0xFFB4C7E7)),
+                          hintStyle: TextStyle(color: Color(0xFFFFCDD2)),
                           alignLabelWithHint: true,
-                          prefixIcon: Icon(Icons.message, color: Color(0xFF86B6F6)),
+                          prefixIcon: Icon(Icons.message, color: Color(0xFFFF69B4)),
                         ),
                         maxLines: 3,
                         validator: (value) {
@@ -204,14 +209,14 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                       ElevatedButton(
                         onPressed: _handleSubmit,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF86B6F6),
+                          backgroundColor: const Color(0xFFFF69B4),
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
                           elevation: 3,
-                          shadowColor: const Color(0xFF86B6F6).withOpacity(0.5),
+                          shadowColor: const Color(0xFFFF69B4).withOpacity(0.5),
                         ),
                         child: const Text(
                           'Submit',
@@ -234,13 +239,13 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [Color(0xFFEBF4FF), Color(0xFFF0F7FF)],
+                      colors: [Color(0xFFFFE4E9), Color(0xFFFFF0F5)],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
-                      color: const Color(0xFFB4D4FF),
+                      color: const Color(0xFFFFB6C1),
                       width: 2,
                     ),
                   ),
@@ -252,7 +257,7 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                           Container(
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF86B6F6),
+                              color: const Color(0xFFFF69B4),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: const Icon(
@@ -267,7 +272,7 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFF4A5F7F),
+                              color: Color(0xFF8B4F6B),
                             ),
                           ),
                         ],
@@ -280,7 +285,7 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                           borderRadius: BorderRadius.circular(12),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(0xFFB4D4FF).withOpacity(0.15),
+                              color: const Color(0xFFFFB6C1).withOpacity(0.15),
                               blurRadius: 8,
                               offset: const Offset(0, 2),
                             ),
@@ -293,7 +298,7 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                               children: [
                                 const Icon(
                                   Icons.person,
-                                  color: Color(0xFF86B6F6),
+                                  color: Color(0xFFFF69B4),
                                   size: 20,
                                 ),
                                 const SizedBox(width: 8),
@@ -302,7 +307,7 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
-                                    color: Color(0xFF6B7F99),
+                                    color: Color(0xFFA36981),
                                   ),
                                 ),
                                 const SizedBox(width: 8),
@@ -312,21 +317,21 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                                     style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w500,
-                                      color: Color(0xFF4A5F7F),
+                                      color: Color(0xFF8B4F6B),
                                     ),
                                   ),
                                 ),
                               ],
                             ),
                             const SizedBox(height: 12),
-                            const Divider(color: Color(0xFFD4E7FF)),
+                            const Divider(color: Color(0xFFFFDAE0)),
                             const SizedBox(height: 12),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Icon(
                                   Icons.message,
-                                  color: Color(0xFF86B6F6),
+                                  color: Color(0xFFFF69B4),
                                   size: 20,
                                 ),
                                 const SizedBox(width: 8),
@@ -335,7 +340,7 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
-                                    color: Color(0xFF6B7F99),
+                                    color: Color(0xFFA36981),
                                   ),
                                 ),
                                 const SizedBox(width: 8),
@@ -344,7 +349,7 @@ class _MiniFormScreenState extends State<MiniFormScreen> {
                                     _submittedMessage,
                                     style: const TextStyle(
                                       fontSize: 16,
-                                      color: Color(0xFF4A5F7F),
+                                      color: Color(0xFF8B4F6B),
                                     ),
                                   ),
                                 ),
